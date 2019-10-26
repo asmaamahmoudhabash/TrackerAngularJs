@@ -1,0 +1,38 @@
+<div class="card-panel">
+    {{title}}
+    <form ng-submit="saveTask()" id="select">
+        <div class="input-field">
+            <input placeholder="Title" type="text" ng-model="Task.title">
+        </div>
+
+        <div class="input-field">
+           <textarea  placeholder="Description" class="materialize-textarea" ng-model="Task.content"></textarea>
+        </div>
+
+        <div class="browser-default">
+            <div>
+            </div>
+            <select name="projects"  ng-model="Task.project_id" ng-if="projects.length">
+                <option value="" disabled>Choose your option</option>
+
+                <option ng-repeat="project in projects" value="{{project.id}}">{{project.title}}</option>
+
+            </select>
+            <label> Select Project</label>
+        </div>
+
+        <button type="submit" class="btn waves-effect"  style="background-color: #d55252">
+          {{button}}
+      </button>
+    </form>
+
+
+</div>
+
+
+
+<script>
+    $(document).ready(function(){
+
+    });
+</script>

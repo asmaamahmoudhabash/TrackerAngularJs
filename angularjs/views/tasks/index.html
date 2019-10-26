@@ -1,0 +1,32 @@
+
+
+
+            <div class="input-field">
+                <i class="material-icons prefix">search</i>
+                <input placeholder="search"  type="text" ng-model="search">
+            </div>
+            <div class="row">
+            <a style="margin-left: 40px; background-color: #d55252" href="#!/tasks/new" class="waves-effect waves-light btn-large">Add Task</a>
+            <a style="margin-left: 40px; background-color: #d55252" href="#!/projects" class="waves-effect waves-light btn-large">All Projects</a>
+            </div>
+            <div class="row">
+
+                <div ng-repeat="Task in Tasks |filter:search" class="col s12 m3">
+                    <div class="card" style="background-color: #ffe7d1" >
+                        <div class="card-content white-text"  style="background-color: #fc7978">
+                            <span class="card-title">{{Task.title}}</span>
+                            <p>{{Task.content}}</p>
+                        </div>
+                        <div class="card-action">
+<!--                            <button ng-click="fe_status(Task.id,$index)" type="button" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">clear</i></button>-->
+<!--                            </button>-->
+                            <a href="#!/tasks/edit/{{Task.id}}" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons">edit</i></a>
+                            <a href="#" ng-click="removeTask(Task.id)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a>
+                            <button ng-if="Task.status=='1'" ng-click="fe_status(Task)" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">done</i></button>
+                            <button ng-if="Task.status=='0'" ng-click="fe_status(Task)" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">clear</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+

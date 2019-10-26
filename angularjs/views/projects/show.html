@@ -1,0 +1,35 @@
+<div class="row">
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12">
+            <a href="#!/projects" class="breadcrumb">All Projects</a>
+            <a href="" class="breadcrumb">Project detatils</a>
+
+
+        </div>
+    </div>
+</nav>
+</div>
+
+<div class="row">
+
+            </div>
+            <div class="row">
+
+                <div  class="col s12 m6">
+                    <div class="card" style="background-color: #ffe7d1" >
+                        <div class="card-content white-text"  style="background-color: #fc7978">
+                            <span class="card-title">  <i class="Small material-icons">insert_chart</i> Title: {{Project.title}}</span>
+                            <span class="card-title">  <i class="Small material-icons">description</i> Description: {{Project.content}}</span>
+
+                        </div>
+                        <div class="card-action">
+                            <a href="#!/projects/edit/{{Project.id}}" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons">edit</i></a>
+                            <a href="#" ng-click="removeProject(Project.id)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+

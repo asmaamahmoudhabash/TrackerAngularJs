@@ -1,0 +1,16 @@
+<div class="card-panel">
+    {{title}}
+    <form ng-submit="saveProject()">
+        <div class="input-field">
+            <input placeholder="Title" type="text" ng-model="Project.title">
+        </div>
+        <div class="input-field">
+           <textarea  placeholder="Description" class="materialize-textarea" ng-model="Project.content"></textarea>
+        </div>
+      <button type="submit" class="btn waves-effect"  style="background-color: #d55252">
+          {{button}}
+      </button>
+    </form>
+
+
+</div>
