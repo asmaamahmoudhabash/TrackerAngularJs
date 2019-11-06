@@ -1,16 +1,17 @@
-<div class="card-panel">
-    {{title}}
+
+<div class="container">
+
     <form ng-submit="saveProject()">
-        <div class="input-field">
-            <input placeholder="Title" type="text" ng-model="Project.title">
+        <div class="form-group">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title"ng-model="Project.projects.title">
         </div>
-        <div class="input-field">
-           <textarea  placeholder="Description" class="materialize-textarea" ng-model="Project.content"></textarea>
+
+        <div class="form-group">
+
+            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Description" rows="3"ng-model="Project.projects.content"></textarea>
         </div>
-      <button type="submit" class="btn waves-effect"  style="background-color: #d55252">
-          {{button}}
-      </button>
+        <button type="submit" class="btn btn-info">
+            {{button}}
+        </button>
     </form>
-
-
 </div>

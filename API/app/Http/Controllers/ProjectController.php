@@ -54,11 +54,18 @@ class ProjectController extends Controller
     public function show($id)
     {
 
-        $this->project = Project::find($id );
-        $all_tasks=Task::where('project_id',$id)->get();
-        $not_finished_tasks =Task::where('status',0)->where('project_id',$id)->count();
-        $finished_tasks =Task::where('status',1)->where('project_id',$id)->count();
-        return response()->json( $this->project);
+//        $this->project = Project::find($id );
+//        $all_tasks=Task::where('project_id',$id)->get();
+//        $not_finished_tasks =Task::where('status',0)->where('project_id',$id)->count();
+//        $finished_tasks =Task::where('status',1)->where('project_id',$id)->count();
+//        return response()->json( $this->project);
+
+        $toReturn = [];
+        $toReturn['projects'] = Project::find($id );
+        $toReturn['all_tasks'] = Task::where('project_id',$id)->count();
+        $toReturn['finished_tasks'] = Task::where('project_id',$id)->where('status',1)->count();
+        $toReturn['not_finished_tasks'] = Task::where('status',0)->where('project_id',$id)->count();
+        return $toReturn;
 
     }
 
@@ -100,9 +107,6 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-//          Project::findOrFail($id)->delete() ;
-//          return redirect('AdminPanel/Projects')->with('error','SuccessDeleting!');
-
         $this->project = Project::find($id );
         $this->project->delete();
         return response()->json(["success"=>"deleted successfully"]);

@@ -1,35 +1,20 @@
-<div class="row">
-<nav>
-    <div class="nav-wrapper">
-        <div class="col s12">
-            <a href="#!/projects" class="breadcrumb">All Projects</a>
-            <a href="" class="breadcrumb">Project detatils</a>
 
-
-        </div>
+<div class="card">
+    <div class="card-header">
+        Details
     </div>
-</nav>
+    <div class="card-body">
+        <h5 class="card-title">{{Project.projects.title}}</h5>
+        <p class="card-text"> Description{{Project.projects.content}}</p>
+        <p class="card-text">Finished Tasks :
+            {{ ((Project.all_tasks - Project.not_finished_tasks) * 100 / Project.all_tasks).toFixed(1)  }}%
+<!--            Finished Tasks{{Project.projects.finished_tasks}}-->
+        </p>
+        <p class="card-text"> Not Finished Tasks :
+<!--            {{Project.projects.not_finished_tasks}}-->
+            {{ ((Project.all_tasks - Project.finished_tasks) * 100 / Project.all_tasks).toFixed(1) }}%
+        </p>
+
+        <a href=#!/projects" class="btn btn-primary">Back</a>
+    </div>
 </div>
-
-<div class="row">
-
-            </div>
-            <div class="row">
-
-                <div  class="col s12 m6">
-                    <div class="card" style="background-color: #ffe7d1" >
-                        <div class="card-content white-text"  style="background-color: #fc7978">
-                            <span class="card-title">  <i class="Small material-icons">insert_chart</i> Title: {{Project.title}}</span>
-                            <span class="card-title">  <i class="Small material-icons">description</i> Description: {{Project.content}}</span>
-
-                        </div>
-                        <div class="card-action">
-                            <a href="#!/projects/edit/{{Project.id}}" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons">edit</i></a>
-                            <a href="#" ng-click="removeProject(Project.id)" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-

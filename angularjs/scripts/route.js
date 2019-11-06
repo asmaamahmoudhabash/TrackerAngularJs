@@ -33,7 +33,7 @@ angular.module('Client',['ngResource','ngRoute'])
             })
 
             .otherwise({
-                redirectTo:'/'
+                redirectTo:'/projects'
             });
     });
 

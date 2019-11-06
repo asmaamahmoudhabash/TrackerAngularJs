@@ -1,28 +1,22 @@
-<div class="card-panel">
-    {{title}}
-    <form ng-submit="saveTask()" id="select">
-        <div class="input-field">
-            <input placeholder="Title" type="text" ng-model="Task.title">
+
+<div class="container">
+
+    <form ng-submit="saveTask()">
+        <div class="form-group">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title"ng-model="Task.title">
         </div>
-
-        <div class="input-field">
-           <textarea  placeholder="Description" class="materialize-textarea" ng-model="Task.content"></textarea>
-        </div>
-
-        <div class="browser-default">
-
-            <select name="projects"  ng-model="Task.project_id" ng-if="projects.length">
-                <option value="" disabled>Choose Project</option>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Choose Project</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="projects"  ng-model="Task.project_id" ng-if="projects.length">
                 <option ng-repeat="project in projects" value="{{project.id}}">{{project.title}}</option>
-
             </select>
-            <label> Select Project</label>
         </div>
+        <div class="form-group">
 
-        <button type="submit" class="btn waves-effect"  style="background-color: #d55252">
-          {{button}}
-      </button>
+            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Description" rows="3"ng-model="Task.content"></textarea>
+        </div>
+        <button type="submit" class="btn btn-info">
+            {{button}}
+        </button>
     </form>
-
-
 </div>
